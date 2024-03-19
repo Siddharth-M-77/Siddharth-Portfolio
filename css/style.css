@@ -975,6 +975,9 @@ textarea:focus {
     #hero {
         padding: 8rem 0 1rem;
     }
+    #logo{
+        display: none;
+    }
 
     #hero h6 {
         letter-spacing: 1px;

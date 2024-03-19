@@ -85,7 +85,7 @@ cursor();
 // Typing Animation
 function TypingAnimation() {
   var typed = new Typed(".auto-type", {
-    strings: ["Frontend Developer", "FULL STACK DEVELOPER"],
+    strings: ["Frontend Developer", "MERN DEVELOPER"],
     typeSpeed: 140,
     backkSpeed: 1000,
     loop: true,
