@@ -8,6 +8,9 @@
     <!-- Favicon link -->
     <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
     <!-- Font link -->
+     <!-- tailwind-CSS -->
+     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
         rel="stylesheet">
     <!-- Icon link -->
@@ -139,23 +142,112 @@
                         <h3 class="title">My Services</h3>
                     </div>
                 </div>
-                <div class="row ">
-                    
+                <div class="service-row">
+                    <!-- Frontend Development -->
                     <div class="col-xl-4 col-lg-6 service-contain mb-4">
                         <div class="inner-contain d-flex flex-column justify-content-center">
                             <i class="ri-code-box-line"></i>
                             <h5>Frontend Development</h5>
-                            <p>Develop various category of websites like - E-Commerce, project, Personal Website etc.
+                            <p>
+                                Build responsive, dynamic, and visually engaging websites such as E-Commerce platforms, project portfolios, and personal websites using modern frameworks like React, Tailwind CSS, and more.
                             </p>
                         </div>
                     </div>
-                    <div class="col-xl-4 col-lg-6 service-contain">
+                    <!-- MERN Stack Development -->
+                    <div class="col-xl-4 col-lg-6 service-contain mb-4">
                         <div class="inner-contain d-flex flex-column justify-content-center">
-                            <i class="ri-apps-fill"></i>
-                            <h5>UI / UX Design</h5>
-                            <p>Design Futuristic, Visually Appealing & User Friendly Interfaces for all devices. </p>
+                            <i class="ri-server-line"></i>
+                            <h5>MERN Stack Development</h5>
+                            <p>
+                                Develop full-stack web applications with seamless integration of frontend (React), backend (Node.js, Express.js), and databases (MongoDB), ensuring scalability and performance.
+                            </p>
                         </div>
                     </div>
+                </div>
+                
+            </div>
+        </section>
+
+        <section id="project">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 text-center">
+                        <h5 class="sub-title">Projects</h5>
+                        <h2 class="title">My Full Stack Projects</h2>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xl-6 col-md-6 mb-4">
+                        <div class="card border-0 p-2">
+                            <img src="/img/project/Screenshot (247).png" class="card-img-top" alt="instagram_clone">
+                            <div class="card-body">
+                                <div class="card-info pt-2 pb-4 border-bottom light-subtle">
+                                    <h4 class="card-title">Instagram Clone</h4>
+                                    <p class="card-text">Developed a feature-rich Instagram Clone using ReactJS, ShadCN, Tailwind CSS, NodeJS, MongoDB, and Express.js. The project features user authentication, post creation, profile management, like/unlike functionality, follow/unfollow capabilities, and a real-time chat system. These features simulate the core functionality of Instagram, providing users with an interactive experience similar to the original platform.</p>
+                                </div>
+                                <div class="btn-comment d-flex justify-content-between mt-3 align-items-center">
+                                    <a href="https://instagram-seven-rosy.vercel.app/" target="_blank" class="custom-btn-2">
+                                        View<i class="ri-eye-fill ps-2"></i>
+                                    </a>
+                                    <span class="d-flex align-items-center fs-5"> Like 
+                                        <div class="con-like">
+                                            <input class="like" type="checkbox" title="like">
+                                            <div class="checkmark">
+                                                <i class="ri-heart-line outline"></i>
+                                                <i class="ri-heart-fill filled"></i>
+                                            </div>
+                                        </div>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        
+                        
+                    </div>
+                    <div class="col-xl-6 col-md-6 mb-4">
+                        <div class="card border-0 p-2">
+                            <img src="/img/project/Screenshot (248).png" class="card-img-top" alt="job_portal">
+                            <div class="card-body">
+                                <div class="card-info pt-2 pb-4 border-bottom light-subtle">
+                                    <h4 class="card-title">Job Portal</h4>
+                                    <p class="card-text">I built a comprehensive job portal using the
+                                        MERN stack, offering seamless functionality
+                                        for both users and admins. Users can register,
+                                        log in, apply for jobs, edit profiles, and reset
+                                        passwords securely via OTP. Admins have
+                                        advanced control, enabling them to post jobs,
+                                        register and update company profiles, and
+                                        manage hiring processes by approving or
+                                        rejecting candidates. The platform ensures
+                                        smooth navigation, secure authentication, and
+                                        a user-friendly experience for effective job
+                                        and company management
+                                        </p>
+                                </div>
+                                <div class="btn-comment d-flex justify-content-between mt-3 align-items-center">
+                                    <a href="https://job-portal-frontend-un27.onrender.com/" target="_blank" class="custom-btn-2">
+                                        View<i class="ri-eye-fill ps-2"></i>
+                                    </a>
+                                    <span class="d-flex align-items-center fs-5"> Like 
+                                        <div class="con-like">
+                                            <input class="like" type="checkbox" title="like">
+                                            <div class="checkmark">
+                                                <i class="ri-heart-line outline"></i>
+                                                <i class="ri-heart-fill filled"></i>
+                                            </div>
+                                        </div>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        
+                    </div>
+
+                    
+                    
+                    
                 </div>
             </div>
         </section>
@@ -166,7 +258,7 @@
                 <div class="row">
                     <div class="col-12 text-center">
                         <h5 class="sub-title">Projects</h5>
-                        <h2 class="title">My Latest Projects</h2>
+                        <h2 class="title">My Frontend Projects</h2>
                     </div>
                 </div>
                 <div class="row">
@@ -321,6 +413,9 @@
                 </div>
             </div>
         </section>
+
+    
+        
 
         <!-- About Section -->
         <section id="about">

@@ -387,6 +387,12 @@ section {
     animation: up-down 2s infinite;
 }
 
+.service-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
 @keyframes up-down {
     0% {
         transform: translateY(-10px);
@@ -990,6 +996,10 @@ textarea:focus {
     /* Navbar section */
 
     /* Hero section */
+    .service-row {
+        flex-direction: column;
+    }
+
     #hero {
         padding: 8rem 0 1rem;
     }
