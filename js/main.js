@@ -1,104 +1,130 @@
-// Opening Animation
-function OpeningAnimation() {
-  gsap.from(" #logo, .nav-link , .contact, #menu-icon", {
-    y: -50,
-    opacity: 0,
-    delay: 0.1,
-    stagger: 0.15,
-  });
-  gsap.from(" .greet, h1 , .desc , .btn-contain", {
-    x: -50,
-    skewX: -15,
-    opacity: 0,
-    delay: 1.5,
-    stagger: 0.2,
-  });
-  gsap.from(" .social-links > a", {
-    y: 50,
-    skewX: -15,
-    opacity: 0,
-    delay: 2.4,
-    stagger: 0.15,
-  });
-  gsap.from(" .my-img", {
-    y: -50,
-    skewX: 35,
-    opacity: 0,
-    delay: 2.7,
-  });
-  gsap.from(" .my-icon-img", {
-    opacity: 0,
-    delay: 3.2,
-    stagger: 0.2,
-  });
-}
-OpeningAnimation();
+// Opening Animationfunction OpeningAnimation() {
+const timeline = gsap.timeline();
 
-// Cursor
-function cursor() {
+// Animate header elements (logo, navigation links, contact, and menu icon)
+timeline
+  .from("#logo, .nav-link, .contact, #menu-icon", {
+    y: -50,
+    opacity: 0,
+    stagger: 0.15,
+    ease: "power2.out",
+  })
+  // Animate greeting, heading, description, and button container
+  .from(
+    ".greet, h1, .desc, .btn-contain",
+    {
+      x: -50,
+      skewX: -15,
+      opacity: 0,
+      stagger: 0.2,
+      ease: "power2.out",
+    },
+    "+=0.5" // Delay between sections
+  )
+  // Animate social links
+  .from(
+    ".social-links > a",
+    {
+      y: 50,
+      skewX: -15,
+      opacity: 0,
+      stagger: 0.15,
+      ease: "power2.out",
+    },
+    "+=0.5"
+  )
+  // Animate the main image
+  .from(
+    ".my-img",
+    {
+      y: -50,
+      skewX: 35,
+      opacity: 0,
+      ease: "power2.out",
+    },
+    "+=0.3"
+  )
+  // Animate icons
+  .from(
+    ".my-icon-img",
+    {
+      opacity: 0,
+      stagger: 0.2,
+      ease: "elastic.out",
+    },
+    "+=0.5"
+  );
+
+// Cursor Animation
+function customCursor() {
   const cursor = document.querySelector(".custom-cursor");
-  const navigation = document.querySelector(".nav-contain");
+  const interactiveElements = document.querySelectorAll(
+    ".nav-link, #logo, .custom-btn-3, .like, .certificate, .inner-contain > h4, .my-link, .phn > a, #menu-icon, #close > i"
+  );
+
+  // Move cursor with smooth animation
   document.addEventListener("mousemove", (e) => {
-    cursor.style.left = e.pageX + "px";
-    cursor.style.top = e.pageY + "px";
-    cursor.animate(
-      {
-        left: e.pageX + "px",
-        top: e.pageY + "px",
-      },
-      { duration: 200, fill: "forwards" }
-    );
-  });
-
-  $(document).mouseenter((e) => {
-    gsap.to(".custom-cursor", {
-      scale: 1,
-      duration: 0.01,
+    gsap.to(cursor, {
+      x: e.pageX,
+      y: e.pageY,
+      duration: 0.1,
     });
   });
-  $(document).mouseleave((e) => {
-    gsap.to(".custom-cursor", {
+
+  // Show cursor on mouse enter
+  document.addEventListener("mouseenter", () => {
+    gsap.to(cursor, {
+      scale: 1,
+      opacity: 1,
+      duration: 0.2,
+    });
+  });
+
+  // Hide cursor on mouse leave
+  document.addEventListener("mouseleave", () => {
+    gsap.to(cursor, {
       scale: 0,
-      duration: 0.01,
+      opacity: 0,
+      duration: 0.2,
     });
   });
 
-  $(
-    ".nav-link , #logo, .custom-btn-3 , .like, .certificate, .inner-contain>h4 , .my-link , .phn>a, #menu-icon, #close>i"
-  ).mousemove((e) => {
-    gsap.to(".custom-cursor", {
-      scale: 3,
-      duration: 0.01,
+  // Scale cursor when hovering over interactive elements
+  interactiveElements.forEach((element) => {
+    element.addEventListener("mouseenter", () => {
+      gsap.to(cursor, {
+        scale: 3,
+        duration: 0.2,
+      });
     });
-  });
-  $(
-    ".nav-link, #logo, .custom-btn-3 , .like, .certificate, .inner-contain>h4 , .my-link , .phn>a, #menu-icon, #close>i"
-  ).mouseleave((e) => {
-    gsap.to(".custom-cursor", {
-      scale: 1,
-      duration: 0.01,
+    element.addEventListener("mouseleave", () => {
+      gsap.to(cursor, {
+        scale: 1,
+        duration: 0.2,
+      });
     });
   });
 }
-cursor();
+customCursor();
 
 // Typing Animation
 function TypingAnimation() {
-  var typed = new Typed(".auto-type", {
-    strings: ["Frontend Developer", "MERN DEVELOPER"],
+  const typed = new Typed(".auto-type", {
+    strings: ["Frontend Developer", "MERN Developer"],
     typeSpeed: 140,
-    backkSpeed: 1000,
+    backSpeed: 50,
     loop: true,
   });
 }
 TypingAnimation();
 
-// nav hide
+// Navbar Hide on Link Click
 function NavHide() {
-  let navBar = document.querySelectorAll(".nav-link");
-  let navCollapse = document.querySelector("#offcanvasNavbar");
-  navBar.forEach(function (a) {
-    a.addEventListener("click", function () {
+  const navLinks = document.querySelectorAll(".nav-link");
+  const navCollapse = document.querySelector("#offcanvasNavbar");
+
+  navLinks.forEach((link) => {
+    link.addEventListener("click", () => {
       navCollapse.classList.remove("show");
     });
   });
